@@ -4,6 +4,8 @@ import { onMounted, onUnmounted, ref } from 'vue';
 const scrolled = ref(false);
 const open = ref(false);
 
+const logoUrl = `${import.meta.env.BASE_URL}assets/logo-vaix-horizontal.svg`;
+
 const links = [
   { href: '#fonctionnalites', label: 'Fonctionnalités' },
   { href: '#agents', label: 'Agents' },
@@ -29,7 +31,7 @@ onUnmounted(() => window.removeEventListener('scroll', onScroll));
   >
     <nav class="container-vaix flex h-[72px] items-center justify-between">
       <a href="#top" class="flex items-center gap-3">
-        <img src="/assets/logo-vaix-horizontal.svg" alt=">AIx STUDIO" class="h-7 w-auto" />
+        <img :src="logoUrl" alt=">AIx STUDIO" class="h-7 w-auto" />
       </a>
 
       <div class="hidden items-center gap-8 md:flex">

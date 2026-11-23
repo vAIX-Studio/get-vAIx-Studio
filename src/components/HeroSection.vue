@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { downloads, providers } from '../data/site';
+
+const logoUrl = `${import.meta.env.BASE_URL}assets/logo-vaix.svg`;
 </script>
 
 <template>
@@ -108,7 +110,7 @@ import { downloads, providers } from '../data/site';
         </div>
         <!-- Logo flottant -->
         <img
-          src="/assets/logo-vaix.svg"
+          :src="logoUrl"
           alt=""
           class="animate-float-slow absolute -right-8 -top-10 w-28 drop-shadow-[0_0_35px_rgba(83,139,246,0.45)]"
         />
