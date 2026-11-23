@@ -1,0 +1,27 @@
+# AiderStudio ignore pattern to preserve 8K context
+node_modules/
+dist/
+build/
+target/
+.git/
+.svn/
+.hg/
+coverage/
+*.lock
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+Cargo.lock
+*.log
+*.sqlite
+*.sqlite3
+*.db
+*.wasm
+*.min.js
+*.min.css
+*.map
+.env*
+.DS_Store
+Thumbs.db
+tmp/
+temp/
