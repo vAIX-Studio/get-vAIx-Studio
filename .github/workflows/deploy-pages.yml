@@ -1,21 +1,19 @@
-name: Déployer le site sur GitHub Pages
+name: Déployer le site sur GitHub Pages (branche gh-pages)
 
 on:
   push:
-    branches: [main, master, build-page]
+    branches: [main, master]
   workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write
 
 concurrency:
   group: pages
   cancel-in-progress: true
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout du dépôt
@@ -30,24 +28,22 @@ jobs:
       - name: Installer les dépendances
         run: npm ci
 
-      - name: Build de production
+      - name: Build de production (base relative ./)
         run: npm run build
 
-      - name: Copier index.html en 404.html (fallback SPA)
-        run: cp dist/index.html dist/404.html
+      - name: Vérifier que dist ne référence jamais /src/main.ts
+        run: |
+          if grep -R "src/main.ts" dist; then
+            echo "ERREUR: référence dev trouvée dans dist" >&2
+            exit 1
+          fi
+          test -f dist/.nojekyll
+          test -f dist/index.html
 
-      - name: Upload de l'artefact GitHub Pages
-        uses: actions/upload-pages-artifact@v3
+      - name: Publier dist/ sur la branche gh-pages
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Déployer sur GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages
+          keep_files: false
