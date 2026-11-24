@@ -82,6 +82,13 @@ export const features: Feature[] = [
       "Serveurs MCP stdio (SQLite, PostgreSQL ou personnalisés) invoqués en boucle agentique, contexte global permanent du projet et mémoire dédiée par conversation.",
     accent: 'neutral',
   },
+  {
+    icon: 'ri-github-line',
+    title: 'GitHub intégré',
+    description:
+      "Connexion native à vos dépôts GitHub : commit assisté par IA, ouverture de pull requests et revue de code directement depuis l'IDE, sans changer d'outil.",
+    accent: 'x',
+  },
 ];
 
 export const agents: AgentRole[] = [
