@@ -16,14 +16,14 @@ onMounted(() => {
 
 <template>
   <div
-    class="min-h-screen bg-[#070b14] text-slate-200 antialiased selection:bg-cyan-400/30 transition-opacity duration-700"
+    class="min-h-screen w-full max-w-[100vw] overflow-x-hidden bg-[#070b14] text-slate-200 antialiased selection:bg-cyan-400/30 transition-opacity duration-700"
     :class="visible ? 'opacity-100' : 'opacity-0'"
   >
-    <div class="pointer-events-none fixed inset-0 bg-grid opacity-60"></div>
-    <div class="pointer-events-none fixed -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[500px] rounded-full bg-indigo-600/20 blur-[140px]"></div>
+    <div class="pointer-events-none fixed inset-0 w-full max-w-[100vw] overflow-hidden bg-grid opacity-60"></div>
+    <div class="pointer-events-none fixed -top-40 left-1/2 h-[500px] w-[900px] max-w-[140vw] -translate-x-1/2 rounded-full bg-indigo-600/20 blur-[140px]"></div>
 
     <NavBar />
-    <main class="relative">
+    <main class="relative w-full max-w-full overflow-x-clip">
       <HeroSection />
       <FeaturesSection />
       <AgentsSection />

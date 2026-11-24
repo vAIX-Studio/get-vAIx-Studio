@@ -9,20 +9,20 @@ const accentIcon: Record<string, string> = {
 </script>
 
 <template>
-  <section id="fonctionnalites" class="relative py-28">
+  <section id="fonctionnalites" class="relative py-20 sm:py-28">
     <div class="container-vaix">
       <div class="mx-auto max-w-2xl text-center">
         <p v-reveal class="badge mb-5">Fonctionnalités</p>
         <h2 v-reveal="80" class="section-title">
           Un IDE pensé pour <span class="text-gradient-ai">l'ère agentique</span>
         </h2>
-        <p v-reveal="160" class="mt-5 text-lg text-slate-400">
+        <p v-reveal="160" class="mt-5 text-base text-slate-400 sm:text-lg">
           Chaque brique de &gt;AIx STUDIO est conçue pour que 3 agents IA spécialisés produisent du code
           fiable, reviewable et réversible — sans quitter votre machine.
         </p>
       </div>
 
-      <div class="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <div class="mt-12 grid grid-cols-1 gap-5 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8">
         <article
           v-for="(f, i) in features"
           :key="f.title"
