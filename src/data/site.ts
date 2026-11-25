@@ -23,7 +23,7 @@ export const features: Feature[] = [
     icon: 'ri-cpu-line',
     title: 'Moteur natif Rust 100 % autonome',
     description:
-      "Zéro dépendance Python ou Aider CLI : streaming SSE/NDJSON unifié sur 7 fournisseurs, gestion native du raisonnement, prompt caching, retry exponentiel et support multimodal (images).",
+      "Zéro dépendance Python ou Aider CLI : streaming SSE/NDJSON unifié sur 7 fournisseurs, raisonnement natif des 4 familles de modèles (o1, DeepSeek reasoning_content, Claude thinking, Gemini thought), prompt caching, retry exponentiel et support multimodal (images).",
     accent: 'ai',
   },
   {
@@ -48,6 +48,13 @@ export const features: Feature[] = [
     accent: 'neutral',
   },
   {
+    icon: 'ri-global-line',
+    title: 'Agents web natifs',
+    description:
+      "En plein pipeline, les agents peuvent chercher sur le web (web_search, parsing DuckDuckGo/Bing) et lire des pages entières (fetch_url, HTML nettoyé en markdown) pour fonder leurs décisions sur des sources à jour.",
+    accent: 'ai',
+  },
+  {
     icon: 'ri-cloud-line',
     title: 'Hybride local & cloud',
     description:
@@ -65,14 +72,14 @@ export const features: Feature[] = [
     icon: 'ri-git-branch-line',
     title: 'Git diff, undo granulaire & artefacts',
     description:
-      "Revue des fichiers modifiés ligne par ligne, annulation ciblée par fichier ou restauration globale, et prévisualisation intégrée du code, HTML et SVG générés.",
+      "Revue des fichiers modifiés ligne par ligne, annulation ciblée par fichier, restauration globale ou par checkpoint, et prévisualisation intégrée du code, HTML et SVG générés.",
     accent: 'ai',
   },
   {
     icon: 'ri-dashboard-3-line',
-    title: 'HUD temps réel',
+    title: 'HUD temps réel & audit',
     description:
-      "Télémétrie matérielle native (CPU, GPU, RAM, température), barre de contexte stackée par sous-agent avec compactage /compact, et suivi journalier des quotas de tokens API.",
+      "Télémétrie matérielle native (CPU, GPU, RAM, température), barre de contexte stackée par sous-agent avec compactage /compact, suivi journalier des quotas de tokens API et export complet de la trace de conversation (audit).",
     accent: 'x',
   },
   {
@@ -83,10 +90,10 @@ export const features: Feature[] = [
     accent: 'neutral',
   },
   {
-    icon: 'ri-github-line',
-    title: 'GitHub intégré',
+    icon: 'ri-git-pull-request-line',
+    title: "Git & PR pilotés par l'IA",
     description:
-      "Connexion native à vos dépôts GitHub : commit assisté par IA, ouverture de pull requests et revue de code directement depuis l'IDE, sans changer d'outil.",
+      "Gestion de branches complète (création, checkout, fetch/push, branches protégées), commit + PR en un clic avec validation projet auto-détectée et rejouable, titre et bump semver proposés, connexion GitHub en un clic (OAuth Device Flow) et gestion des issues — sans quitter l'IDE.",
     accent: 'x',
   },
 ];
